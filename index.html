@@ -125,46 +125,7 @@
         .light-mode .navbar {
           background: rgba(255, 255, 255, 0.95) !important;
         }
-        .glass,
-        .glass-dark,
-        .navbar.scrolled,
-        .benefit-card {
-          backdrop-filter: none !important; /* Matikan blur */
-          background: rgba(
-            17,
-            24,
-            39,
-            0.95
-          ) !important; /* Ganti dengan warna solid agak transparan */
-        }
-
-        /* Kurangi bayangan neon yang berat di HP */
-        .glow-text,
-        .glow-box,
-        .neon-cyan,
-        .neon-magenta,
-        .neon-green {
-          box-shadow: none !important;
-          text-shadow: 0 0 5px rgba(0, 245, 255, 0.5) !important; /* Simple shadow saja */
-        }
-
-        /* Matikan animasi background gradient di HP */
-        .gradient-animated,
-        .holographic {
-          animation: none !important;
-          background: #111827 !important; /* Warna diam */
-        }
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        height: 100%;
+        .glass;
       }
 
       body {
@@ -697,6 +658,53 @@
 
       .light-mode .footer a:hover {
         color: #06b6d4;
+      }
+      /* Perbaikan untuk halaman dokumentasi di light mode */
+      .light-mode #docs-page .text-cyan-100 {
+        color: #0891b2 !important;
+      }
+
+      .light-mode #docs-page .text-white {
+        color: #1e293b !important;
+      }
+
+      .light-mode #docs-page .text-gray-300 {
+        color: #475569 !important;
+      }
+
+      .light-mode #docs-page .text-gray-100 {
+        color: #334155 !important;
+      }
+
+      .light-mode #docs-page .text-gray-400 {
+        color: #64748b !important;
+      }
+
+      /* Pastikan background cards terlihat di light mode */
+      .light-mode #docs-page .glass-dark {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Step badges di dokumentasi */
+      .light-mode #docs-page .bg-cyan-500,
+      .light-mode #docs-page .bg-purple-500,
+      .light-mode #docs-page .bg-green-500 {
+        opacity: 0.9;
+      }
+
+      /* Border untuk card di light mode */
+      .light-mode #docs-page .border-cyan-500 {
+        border-color: #06b6d4 !important;
+      }
+
+      .light-mode #docs-page .border-purple-500 {
+        border-color: #8b5cf6 !important;
+      }
+
+      .light-mode #docs-page .border-green-500 {
+        border-color: #10b981 !important;
       }
     </style>
     <style>
@@ -2868,7 +2876,7 @@
               Mulai kelola kehidupan belajar Anda hari ini!
             </p>
             <a
-              href="#"
+              href="/"
               data-page="home"
               class="page-link inline-block px-10 py-5 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 rounded-xl font-orbitron font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
               data-lang-en="Back to Home"
@@ -3319,6 +3327,7 @@
         primary_action_color: "#06b6d4",
         secondary_action_color: "#8b5cf6",
         surface_color: "#1f2937",
+        benefits_show: true,
         /* font_family: "Oxanium", */
         font_size: 16,
       };
@@ -3982,5 +3991,6 @@
         }
       })();
     </script>
+    <!-- Diagnostic helper: log benefits state and recover if an overlay still covers it -->
   </body>
 </html>
